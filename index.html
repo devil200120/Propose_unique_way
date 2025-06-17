@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me? 💍</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="aurora-background"></div>
+        <div class="floating-hearts">
+            <div class="heart heart-1">💕</div>
+            <div class="heart heart-2">💖</div>
+            <div class="heart heart-3">💝</div>
+            <div class="heart heart-4">💗</div>
+            <div class="heart heart-5">💘</div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="glass-panel main-proposal">
+                <h1 class="proposal-title">
+                    <span class="title-word">Will</span>
+                    <span class="title-word">you</span>
+                    <span class="title-word">be</span>
+                    <span class="title-word">mine</span>
+                    <span class="title-word">forever Sradha ?</span>
+                </h1>
+                
+                <div class="proposal-buttons">
+                    <button class="btn btn-yes" id="yesBtn">
+                        <span>YES! 💍</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-no" id="noBtn">
+                        <span>Maybe... 🤔</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">↓</div>
+            <span>Scroll to explore our story</span>
+        </div>
+    </section>
+
+    <!-- Celebration Overlay -->
+    <div class="celebration-overlay" id="celebrationOverlay">
+        <canvas id="confettiCanvas"></canvas>
+        <div class="celebration-content">
+            <h2 class="celebration-title" id="celebrationTitle">She said YES! 🎉</h2>
+            <div class="heart-rain">
+                <div class="falling-heart">💕</div>
+                <div class="falling-heart">💖</div>
+                <div class="falling-heart">💝</div>
+                <div class="falling-heart">💗</div>
+                <div class="falling-heart">💘</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <h2 class="section-title">Our Beautiful Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="timeline-items" id="timelineItems">
+                    <!-- Timeline items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Carousel Section -->
+    <section class="quotes-section" id="quotes">
+        <div class="container">
+            <h2 class="section-title">Words from the Heart</h2>
+            <div class="quotes-carousel">
+                <div class="quote-container" id="quoteContainer">
+                    <!-- Quotes will be populated by JavaScript -->
+                </div>
+                <div class="carousel-navigation">
+                    <button class="nav-dot active" data-index="0"></button>
+                    <button class="nav-dot" data-index="1"></button>
+                    <button class="nav-dot" data-index="2"></button>
+                    <button class="nav-dot" data-index="3"></button>
+                    <button class="nav-dot" data-index="4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Precious Moments</h2>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="memories">Memories</button>
+                <button class="filter-btn" data-filter="romantic">Romantic</button>
+                <button class="filter-btn" data-filter="adventures">Adventures</button>
+                <button class="filter-btn" data-filter="everyday">Everyday</button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Message Section -->
+    <section class="final-section" id="final">
+        <div class="aurora-background final-aurora"></div>
+        <div class="container">
+            <div class="glass-panel final-message">
+                <div class="ring-animation">
+                    <div class="ring">💍</div>
+                    <div class="ring-glow"></div>
+                </div>
+                <h2 class="final-title" id="finalTitle">My Dearest Love</h2>
+                <p class="final-content" id="finalContent">
+                    You have brought so much joy, laughter, and love into my life. Every day with you is an adventure, and I want to spend the rest of my days making you as happy as you make me. You are my best friend, my soulmate, and the love of my life. Will you marry me and make me the happiest person in the world?
+                </p>
+                <div class="final-actions">
+                    <button class="btn btn-primary share-btn" id="shareBtn">
+                        Share Our Joy 💕
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio for effects -->
+    <audio id="clickSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmzhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmzhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmzhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmzhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmzhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBjaIy+/FdCUELA==" type="audio/wav">
+    </audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
